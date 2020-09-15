@@ -12,16 +12,16 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json())
 // your code goes here
-app.get('/', (req,res)=>{
-    return res.json("Hello World");
+app.get("/", (req,res)=>{
+    return res.json("Hello World!");
 });
 
-app.post('/add',(req,res)=>{
+app.post("/add",(req,res)=>{
 
     const {num1,num2} = req.body;
-    if(typeof(num1)=="string"||typeof(num2)=="string"){
+    if(typeof num1=="string"||typeof num2 =="string"){
         return res.json({
-            status: `error`,
+            status: "error",
             message: "Invalid data types"
         })
     }
@@ -41,9 +41,9 @@ app.post('/add',(req,res)=>{
 
 });
 
-app.post('/sub', (req,res)=>{
+app.post("/sub", (req,res)=>{
     const {num1,num2} = req.body;
-    if(typeof(num1)=="string"||typeof(num2)=="string"){
+    if(typeof num1=="string"||typeof num2=="string"){
         return res.json({
             status: "error",
             message: "Invalid data types"
@@ -59,15 +59,15 @@ app.post('/sub', (req,res)=>{
     }
     return res.json({
         status: "success",
-        message: 'the difference of given two numbers',
+        message: "the difference of given two numbers",
         difference: sub
     })
 
 })
 
-app.post('/multiply', (req,res)=>{
+app.post("/multiply", (req,res)=>{
     const {num1,num2} = req.body;
-    if(typeof(num1)=="string"||typeof(num2)=="string"){
+    if(typeof num1 =="string" && typeof num2 =="string"){
         return res.json({
             status: "error",
             message: "Invalid data types"
@@ -91,9 +91,9 @@ app.post('/multiply', (req,res)=>{
 
 })
 
-app.post('/divide',(req,res)=>{
+app.post("/divide",(req,res)=>{
     const {num1,num2} = req.body;
-    if(typeof(num1)=="string"||typeof(num2)=="string"){
+    if(typeof num1 =="string"||typeof num2 =="string"){
         return res.json({
             status: "error",
             message: "Invalid data types"
