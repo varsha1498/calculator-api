@@ -21,7 +21,7 @@ app.post('/add',(req,res)=>{
     const {num1,num2} = req.body;
     if(typeof(num1)==="string"||typeof(num2)==="string"){
         return res.json({
-            status: "failure",
+            status: `error`,
             message: "Invalid data types"
         })
     }
@@ -29,7 +29,7 @@ app.post('/add',(req,res)=>{
     const result = num1 + num2;
     if(num1>1000000||num2>1000000||result>1000000){
         return res.json({
-            status: "failure",
+            status: "error",
             message : "overflow"
         })
     }
@@ -45,7 +45,7 @@ app.post('/sub', (req,res)=>{
     const {num1,num2} = req.body;
     if(typeof(num1)==="string"||typeof(num2)==="string"){
         return res.json({
-            status: "failure",
+            status: "error",
             message: "Invalid data types"
         })
     }
@@ -53,7 +53,7 @@ app.post('/sub', (req,res)=>{
     const sub = num1 - num2;
     if(sub<-1000000){
         return res.json({
-            status: "failure",
+            status: "error",
             message: "underflow"
         })
     }
@@ -69,7 +69,7 @@ app.post('/multiply', (req,res)=>{
     const {num1,num2} = req.body;
     if(typeof(num1)==="string"||typeof(num2)==="string"){
         return res.json({
-            status: "failure",
+            status: "error",
             message: "Invalid data types"
         })
     }
@@ -78,7 +78,7 @@ app.post('/multiply', (req,res)=>{
     const mult = num1*num2;
     if(mult>1000000){
         return res.json({
-            status:"failure",
+            status:"error",
             message: "overflow"
         })
     }
@@ -95,13 +95,13 @@ app.post('/divide',(req,res)=>{
     const {num1,num2} = req.body;
     if(typeof(num1)==="string"||typeof(num2)==="string"){
         return res.json({
-            status: "failure",
+            status: "error",
             message: "Invalid data types"
         });
     }
     if(num2==0){
         return res.json({
-            status: "failure",
+            status: "error",
             message: 'Cannot divide by zero'
         });
     }
