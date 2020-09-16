@@ -84,7 +84,7 @@ app.post("/multiply", (req,res)=>{
     }
     return res.json({
         status: "success",
-        message: 'the product of given numbers',
+        message: 'The product of given numbers',
         result: mult
     })
 
@@ -109,12 +109,12 @@ app.post("/divide",(req,res)=>{
     if(div>1000000){
         return res.json({
             status: "error",
-            message: "Overflow"
+            message: "overflow"
         })
     }
     return res.json({
         status: "success",
-        message: 'the division of given numbers',
+        message: 'The division of given numbers',
         result: div
     })
 })
