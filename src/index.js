@@ -79,7 +79,7 @@ app.post("/multiply", (req,res)=>{
     if(mult>1000000){
         return res.json({
             status:"error",
-            message: "overflow"
+            message: "Overflow"
         })
     }
     return res.json({
